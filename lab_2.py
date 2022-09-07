@@ -14,12 +14,12 @@
 #----------------------------------------------------------------------------------------------------------------------------------------------
 
 ###Horse age problem
-#get inputs
-#human_age = float(input("What is your age: "))
+##get inputs
+human_age = float(input("What is your age: "))
 #calculate age
-#horse_age = (3 * ((((human_age ** 2) - 47) / 7) + 12))
+horse_age = (3 * ((((human_age ** 2) - 47) / 7) + 12))
 #print results
-#print("Your age in horse years is", horse_age)
+print("Your age in horse years is", horse_age)
 #----------------------------------------------------------------------------------------------------------------------------------------------
 
 ### To calculate a humans height, use age^2.
