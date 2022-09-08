@@ -27,4 +27,3 @@ while tries < 4:
     else:
         print("Guess again")
         tries += 1
-
