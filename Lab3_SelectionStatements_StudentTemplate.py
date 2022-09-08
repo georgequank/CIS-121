@@ -37,14 +37,16 @@ end_message = 1
 # These inner brackets check the income, then set the taxowed based on the lab sheet.
 # If the income is outside the lab sheet, it will print an error message, then turn off the end message
 # Once it does its filtering, and if the end message is active, it will display what your income tax is rounded
+# added a new way that takes the previous amount, and minuses off of the income before taking
+# its own bracket rate, then adds the amount minused by the previous bracket's rate
 
 if maritalStatus == "s":
-	if 0 <= earnedIncome <= 9550:
+	if 0 <= earnedIncome <= 9950:
 		taxOwed = earnedIncome * 0.10
 	elif 9551 <= earnedIncome <= 40525:
-		taxOwed = earnedIncome * 0.12
+		taxOwed = ((earnedIncome - 9950) * 0.12) + (9950 * 0.10)
 	elif 40526 <= earnedIncome <= 86375:
-		taxOwed = earnedIncome * .22
+		taxOwed = ((earnedIncome - 40525) * .22) + ((40525 - 9950) * 0.12) + (9950 * .10)
 	else:
 		print("We cannot compute this income tax")
 		end_message = 0
@@ -52,17 +54,11 @@ elif maritalStatus == "m":
 	if 0 <= earnedIncome <= 19900:
 		taxOwed = earnedIncome * 0.10
 	elif 19901 <= earnedIncome <= 81050:
-		taxOwed = earnedIncome * 0.12
+		taxOwed = ((earnedIncome - 19900) * 0.12) + (19900 * 0.10)
 	elif 81051 <= earnedIncome <= 172750:
-		taxOwed = earnedIncome * 0.22
+		taxOwed = ((earnedIncome - 81050) * 0.22) + ((81050 - 19900) * 0.12) + (19900 * .10)
 	else:
 		print("We cannot compute this income tax")
 		end_message = 0
 if end_message == 1:
-	print("This year you owe", round(taxOwed, 2), "in taxes")
-
-
-
-
-
-
+	print("This year you owe", taxOwed, "in taxes")
