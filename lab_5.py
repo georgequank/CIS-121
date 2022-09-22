@@ -12,23 +12,22 @@ def main():
 	#encodedWord = "LHA GRAAN FIATD GTA8MS IN LHA W8RM SUNEABMS"
 	#encodedWord = "TONG T8E T8CKS L8SLY L8CO LIMA 8L TA8SL T8LATY"
 
+encodedWord = "WBLARF8TTS"
+
 def DecodeWord():
-	encodedWord = "WBLARF8TTS"
-	for letter in encodeWord[0:30]:
-	if letter == "L":
-		letter = "T"
-	elif letter == "T":
-		letter = "L"
-	elif letter == "8":
-		letter = "A"
-	else:
-		letter = letter
-	return encodedWord
+	for letter in encodedWord[0:1]:
+		if letter == "L":
+			letter = "T"
+		elif letter == "T":
+			letter = "L"
+		elif letter == "8":
+			letter = "A"
+		else:
+			letter = letter
 	print(DecodeWord(encodedWord))
+	return encodeWord
 
 encodeWord = DecodeWord()
-
-
 
 #This code triggers the main to run
 #we'll talk about this more in chapters 6,7, & 8.	
