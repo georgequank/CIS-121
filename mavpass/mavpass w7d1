@@ -1,0 +1,23 @@
+###lists and functions
+
+#braindump of lists
+
+#coding problem
+#create a list that contains every even positive true divisor of the number 520. print that list
+
+true_divisor_list = []
+number = int(input("What number do you choose: "))
+
+def true_even_divisor_finder(top_number):
+    for number in range(1, top_number):
+        if (top_number % number == 0) and (number % 2 == 0):
+            true_divisor_list.append(number)
+    return true_divisor_list
+
+print(true_even_divisor_finder(number))
+
+###brainstorm functions
+
+###what are parameters
+
+###status check on lists
